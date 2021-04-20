@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { CatalogosService } from '../services/catalogos.service';
+
+import { Datum, RootObject } from '../interfaces/interfaces';
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +11,32 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  catalogos: Datum[] = [];
+  constructor(private CatalogosService: CatalogosService, public servicio:CatalogosService ) {}
+  ngOnInit(){
+    this.CatalogosService.getCatalog().subscribe(resp=>{
+
+      console.log('catalogos', resp);
+      this.catalogos=resp.data;
+    });
+  }
+  deleteCata(id){
+    const obj = {
+      "id": id
+    };
+    this.servicio.delSubCatalogo(obj).then(data=>{
+      console.log(data);
+      this.CatalogosService.getCatalog().subscribe(resp=>{
+
+        console.log('catalogos', resp);
+        this.catalogos=resp.data;
+      });
+
+
+    });
+
+
+
+  }
 
 }

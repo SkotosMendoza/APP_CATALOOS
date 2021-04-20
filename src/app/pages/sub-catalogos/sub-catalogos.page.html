@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let sub of catalogos" (click)="deleteCata(sub.id)" color ="dark">
+  <ion-card *ngFor="let sub of subCat" color ="dark">
     <ion-card-header>
       <ion-card-subtitle>
         <span>
@@ -17,7 +17,7 @@
         
       </ion-card-subtitle>
       
-      <ion-card-title>{{sub.categoria}}</ion-card-title>
+      <ion-card-title>{{sub.id}}</ion-card-title>
     </ion-card-header>
   </ion-card>  
 </ion-content>

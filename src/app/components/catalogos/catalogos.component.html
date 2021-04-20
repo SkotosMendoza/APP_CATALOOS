@@ -1,0 +1,7 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" *ngFor= "let catalogo of catalogos" >
+      <app-catalogo [catalogo]="catalogo" (click)="eventSubCatalog(catalogo.id)" ></app-catalogo>
+    </ion-col>
+  </ion-row>
+</ion-grid>

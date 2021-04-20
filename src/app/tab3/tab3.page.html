@@ -1,17 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Agregar categoria
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input name="nombre" [(ngModel)]="obj.nombre"></ion-input>
+    <ion-label position="floating">categoria</ion-label>
+    <ion-input name="categoria" [(ngModel)]="obj.categoria"></ion-input>
+    <ion-label position="floating">codigo</ion-label>
+    <ion-input name="codigo" [(ngModel)]="obj.codigo"></ion-input>
+    
+  </ion-item>
+  <ion-button expand ="full" (click)="enviar()">Enviar</ion-button>
+  
 </ion-content>

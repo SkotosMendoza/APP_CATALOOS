@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CatalogosService } from '../services/catalogos.service';
+
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor( public servicio:CatalogosService ) {}
+
+  obj = {
+    "nombre":"",
+    "categoria":"",
+    "codigo":0
+  };
+  enviar(){
+    console.log(this.obj);
+    this.servicio.addCatalogo(this.obj).then(data=>{
+      console.log(data);
+      
+
+    });
+  }
 
 }
